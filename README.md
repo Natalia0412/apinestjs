@@ -15,9 +15,13 @@
 ## Description
 
 Rest API feita com NodeJS e framework NestJS, consequentemente Typescript e Javascript.
+
 Banco de dados Postgres
+
 Prisma para mapear entidades para as tabelas do banco de dados.
+
 Jwt para atuenticação
+
 ## Installation
 
 ```bash
