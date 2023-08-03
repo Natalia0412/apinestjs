@@ -20,7 +20,7 @@ Banco de dados Postgres.
 
 Prisma para mapear entidades para as tabelas do banco de dados.
 
-Jwt para atenticação.
+Jwt para autenticação.
 
 ## Installation
 
