@@ -58,26 +58,23 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 ## Prisma
-npx prisma init
+npx prisma init 
 
 O comando abaixo cria um migration, ou seja, cria a tabela no banco de dados, e também quando faz uma altração no schema.prisma cria uma migration para isso.
+
 npx prisma migrate dev --name nameMigration
 
 Quando cria primeiro a tabela no banco de dados , pode usar o comando abaixo, ou, quando faz uma alteração no schema.prisma e já gerou a migration dessa alteração. 
+
 npx prisma generate 
 
 ## Param Decorator 
 Utilizo o conceito de Param decorator no arquivo  user.controller.ts, no método da rota @Get('/:id').
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Natália Barros](https://www.linkedin.com/in/natalia-barros-a78316143/)
 
 ## License
 
