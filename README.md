@@ -14,13 +14,13 @@
 
 ## Description
 
-Rest API feita com NodeJS e framework NestJS, consequentemente Typescript e Javascript.
+Rest API feita com NodeJS e framework NestJS, ou seja, Typescript e Javascript.
 
-Banco de dados Postgres
+Banco de dados Postgres.
 
 Prisma para mapear entidades para as tabelas do banco de dados.
 
-Jwt para atuenticação
+Jwt para atenticação.
 
 ## Installation
 
