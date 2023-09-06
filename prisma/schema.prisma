@@ -13,6 +13,7 @@ model User {
   email     String    @db.VarChar(127)
   password  String    @db.VarChar(127)
   birthat   DateTime? @db.Date
+  role      Int       @default(1)
   createdat DateTime  @default(now())
   updatedat  DateTime @updatedAt
  @@map("users")
