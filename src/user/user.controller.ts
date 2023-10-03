@@ -21,32 +21,29 @@ import { Roles } from '../decorators/roles.decorator';
 import { Role } from '../enums/role.enum';
 import { RoleGuard } from '../guards/role.guard';
 import { AuthGuard } from '../guards/auth.guard';
-
+@Roles(Role.Admin)
 @UseGuards(AuthGuard, RoleGuard)
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  @Roles(Role.Admin)
+
   @UseInterceptors(LogInterceptor)
   @Post()
   async create(@Body() body: CreateUserDTO) {
     return this.userService.create(body);
   }
 
-  @Roles(Role.Admin, Role.User)
   @UseInterceptors(LogInterceptor)
   @Get()
   async list() {
     return this.userService.list();
   }
 
-  @Roles(Role.Admin)
   @Get('/:id')
   async show(@ParamId() id: number) {
     return this.userService.show(id);
   }
 
-  @Roles(Role.Admin)
   @Put('/:id')
   async udpdate(
     @Param('id', ParseIntPipe) id: number,
@@ -55,7 +52,6 @@ export class UserController {
     return this.userService.update(id, body);
   }
 
-  @Roles(Role.Admin)
   @Patch('/:id')
   async updatePartial(
     @Param('id', ParseIntPipe) id: number,
@@ -64,7 +60,6 @@ export class UserController {
     return this.userService.updatePartial(id, body);
   }
 
-  @Roles(Role.Admin)
   @Delete('/:id')
   async delete(@Param('id', ParseIntPipe) id: number) {
     return this.userService.delete(id);
