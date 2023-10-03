@@ -17,11 +17,12 @@ import { updatePatchUserDTO } from './dto/update-patch-user.dto';
 import { UserService } from './user.service';
 import { LogInterceptor } from './interceptors/log.interceptor';
 import { ParamId } from '../decorators/param-id.decorator';
-import { Roles } from '../decorators/role.decorator';
+import { Roles } from '../decorators/roles.decorator';
 import { Role } from '../enums/role.enum';
 import { RoleGuard } from '../guards/role.guard';
+import { AuthGuard } from '../guards/auth.guard';
 
-@UseGuards(RoleGuard)
+@UseGuards(AuthGuard, RoleGuard)
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -32,7 +33,7 @@ export class UserController {
     return this.userService.create(body);
   }
 
-  @Roles(Role.Admin)
+  @Roles(Role.Admin, Role.User)
   @UseInterceptors(LogInterceptor)
   @Get()
   async list() {
